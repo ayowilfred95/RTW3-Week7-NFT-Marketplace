@@ -9,6 +9,7 @@ async function main() {
   const marketplace = await Marketplace.deploy();
 
   await marketplace.deployed();
+  console.log("nftMarketplace deployed to:", marketplace.address);
 
   const data = {
     address: marketplace.address,
