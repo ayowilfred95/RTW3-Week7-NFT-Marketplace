@@ -1,5 +1,4 @@
 import logo from '../logo_3.png';
-import fullLogo from '../full_logo.png';
 import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch, useParams} from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
@@ -23,8 +22,8 @@ function Navbar() {
     ethereumButton.textContent = "Connected";
     ethereumButton.classList.remove("hover:bg-blue-70");
     ethereumButton.classList.remove("bg-blue-500");
-    ethereumButton.classList.add("hover:bg-green-70");
-    ethereumButton.classList.add("bg-green-500");
+    ethereumButton.classList.add("hover:bg-blue-70");
+    ethereumButton.classList.add("bg-blue-500");
   }
   
   async function connectWebsite() {
@@ -64,52 +63,52 @@ function Navbar() {
   
       return (
         <div className="">
-          <nav className="w-screen">
-            <ul className='flex items-end justify-between py-3 bg-transparent text-white pr-5'>
+          <nav className="p-3 bg-[#06132d] ">
+            <ul className='container flex flex-wrap justify-between items-center mx-auto'>
             <li className='flex items-end ml-5 pb-2'>
               <Link to="/">
-              <img src={fullLogo} alt="" width={120} height={120} className="inline-block -mt-2"/>
-              <div className='inline-block font-bold text-xl ml-2'>
-                NFT Marketplace
+             <div className='self-center text-xl font-semibold whitespace-nowrap text-white'> 
+               WilFred NFT Marketplace.
               </div>
               </Link>
             </li>
             <li className='w-2/6'>
-              <ul className='lg:flex justify-between font-bold mr-10 text-lg'>
+              <ul className='flex flex-col mt-4 bg-gray-50 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700'>
                 {location.pathname === "/" ? 
-                <li className='border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 rounded text-[#ffffff]  md:p-0  text-white'>
                   <Link to="/">Marketplace</Link>
                 </li>
                 :
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 rounded text-[#ffffff]  md:p-0  text-white'>
                   <Link to="/">Marketplace</Link>
                 </li>              
                 }
                 {location.pathname === "/sellNFT" ? 
-                <li className='border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
                   <Link to="/sellNFT">List My NFT</Link>
                 </li>
                 :
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
                   <Link to="/sellNFT">List My NFT</Link>
                 </li>              
                 }              
                 {location.pathname === "/profile" ? 
-                <li className='border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
                   <Link to="/profile">Profile</Link>
                 </li>
                 :
-                <li className='hover:border-b-2 hover:pb-0 p-2'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
                   <Link to="/profile">Profile</Link>
                 </li>              
                 }  
                 <li>
-                  <button className="enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
+                  <button className="enableEthereumButton rounded-full bg-[#725bdb] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
                 </li>
               </ul>
             </li>
             </ul>
           </nav>
+          < hr/>
           <div className='text-white text-bold text-right mr-10 text-sm'>
             {currAddress !== "0x" ? "Connected to":"Not Connected. Please login to view NFTs"} {currAddress !== "0x" ? (currAddress.substring(0,15)+'...'):""}
           </div>
