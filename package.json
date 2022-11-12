@@ -2,6 +2,7 @@
   "name": "marketplace3",
   "version": "0.1.0",
   "homepage": ".",
+  "proxy": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "@openzeppelin/contracts": "^4.6.0",
