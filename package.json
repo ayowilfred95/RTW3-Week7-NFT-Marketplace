@@ -1,7 +1,7 @@
 {
   "name": "marketplace3",
   "version": "0.1.0",
-  "homepage": "https://nft-wilfred.vercel.app/",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@openzeppelin/contracts": "^4.6.0",
