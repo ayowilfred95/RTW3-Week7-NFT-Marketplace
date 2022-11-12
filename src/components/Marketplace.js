@@ -13,7 +13,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmXRJWYyTdwbxmn5jzRPnyoarSay5tmTdGXNKq13NsHpsb",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757CB4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
     {
         "name": "NFT#2",
@@ -22,7 +22,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmQiD9fAqVxeKVKPi1QnTtHA7mBEegnyPog5Q3dT5SCbCj",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
     {
         "name": "NFT#3",
@@ -31,7 +31,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmSjWMo3EPKTqwDKbNmizaMtow9U4pBGYH3dPvNWYMtGxS",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
     {
         "name": "NFT#4",
@@ -40,7 +40,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmVjz5WCvaJMMxvtzLgWSCRb8TGaTx4cvMe4cUmGihcBKb",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
     {
         "name": "NFT#5",
@@ -49,7 +49,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmYyAC5MbvDFzqbvXK2dJMpzHzrGYWi3PoYdRtUvKQyVA2",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
     {
         "name": "NFT#5",
@@ -58,7 +58,7 @@ const sampleData = [
         "image":"https://gateway.pinata.cloud/ipfs/QmTuSFXoHEzxtahJAUDCFVJhoWc3yjVKYqgtnUBDAKbagh",
         "price":"0.03ETH",
         "currentlySelling":"True",
-        "address":"0xe81Bf5A757C4f7F82a2F23b1e59bE45c33c5b13",
+        "address":"0x2839D76f814EE5D55Ae07785287b836d5979D581",
     },
 ];
 const [data, updateData] = useState(sampleData);
@@ -100,9 +100,14 @@ async function getAllNFTs() {
 if(!dataFetched)
     getAllNFTs();
 
+const [email, setEmail ] = useState('');
 
-    
-    
+const handleSubmit =(e)=>{
+    e.preventDefault();
+    const blog = {email}
+    console.log(blog);
+
+}    
 
 
 return (
@@ -155,15 +160,15 @@ return (
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         
+        <hr />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
         <div >
         <section className=" bg-[url('/img/newsletter.jpeg')] bg-contain bg-auto bg-no-repeat bg-[length:1200px_350px] container mx-auto  ">
@@ -171,7 +176,7 @@ return (
       <div className="mx-auto max-w-screen-md text-left sm:text-center">
           <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl text-[#e5e5e5] dark:text-white">Stay in the Loop</h2>
           <p className="mx-auto mb-8 max-w-2xl font-light text-gray-900 md:mb-12 sm:text-xl text-[#e5e5e5] dark:text-white">Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips for navigating Wilfred.</p>
-          <form action="#">
+          <form onSubmit={handleSubmit} action="#">
               <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                   <div className="relative w-full">
                       <label for="email" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
@@ -179,10 +184,11 @@ return (
                           <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                       </div>
                       
-                      <input typeof="text" className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your email" type="email" id="email" required="" />
+                      <input typeof="text" value={email}
+          onChange={(e) => setEmail(e.target.value)} className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your email" type="email" id="email" required="" />
                   </div>
                   <div>
-                      <button className="rounded-full bg-[#725bdb] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm">Subscribe</button>
+                      <button onClick={()=> setEmail() } className="rounded-full bg-[#725bdb] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm">Subscribe</button>
                   </div>
               </div>
               <div class="mx-auto max-w-screen-sm text-sm text-left text-[#ffffff]  text-gray-500  newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read our Privacy Policy</a>.</div>
