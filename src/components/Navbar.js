@@ -1,5 +1,4 @@
-import logo from '../logo_3.png';
-import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
@@ -59,7 +58,7 @@ function Navbar() {
       window.ethereum.on('accountsChanged', function(accounts){
         window.location.replace(location.pathname)
       })
-    });
+    },[location.pathname]);
   
       return (
         <div className="">
@@ -75,34 +74,34 @@ function Navbar() {
             <li className='w-2/6'>
               <ul className='flex flex-col mt-4 bg-gray-50 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700'>
                 {location.pathname === "/" ? 
-                <li className='block py-2 pr-4 pl-3 rounded text-[#ffffff]  md:p-0  text-white'>
+                <li className='block py-2 pr-4 pl-3 rounded  md:p-0  text-white'>
                   <Link to="/">Marketplace</Link>
                 </li>
                 :
-                <li className='block py-2 pr-4 pl-3 rounded text-[#ffffff]  md:p-0  text-white'>
+                <li className='block py-2 pr-4 pl-3 rounded  md:p-0  text-white'>
                   <Link to="/">Marketplace</Link>
                 </li>              
                 }
                 {location.pathname === "/sellNFT" ? 
-                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent'>
                   <Link to="/sellNFT">List My NFT</Link>
                 </li>
                 :
-                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent'>
                   <Link to="/sellNFT">List My NFT</Link>
                 </li>              
                 }              
                 {location.pathname === "/profile" ? 
-                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent'>
                   <Link to="/profile">Profile</Link>
                 </li>
                 :
-                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent text-white'>
+                <li className='block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent'>
                   <Link to="/profile">Profile</Link>
                 </li>              
                 }  
                 <li>
-                  <button className="enableEthereumButton rounded-full bg-[#725bdb] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
+                  <button className="enableEthereumButton rounded-full bg-[#725bdb] hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
                 </li>
               </ul>
             </li>

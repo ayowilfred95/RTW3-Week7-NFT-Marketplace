@@ -1,8 +1,6 @@
 {
   "name": "marketplace3",
   "version": "0.1.0",
-  "homepage": ".",
-  "proxy": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "@openzeppelin/contracts": "^4.6.0",
@@ -10,6 +8,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "firebase": "^9.14.0",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.3.4",
     "fs": "*",
